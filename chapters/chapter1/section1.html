@@ -16,11 +16,24 @@
 <body>
     <header>
         <h1>Section 1 Solutions</h1>
-        <a href="../index.html">← Back to Home</a>
+        <a href="../../index.html">Back to Home</a>
     </header>
 
     <main>
         <p><strong>Problem 1.1</strong></p>
+        <p><strong>(a)</strong> Suppose $(\Omega, \mathcal{F}, P)$ is a discrete probability space with $A_n \in
+            \mathcal{F}$ for all $n$. Let $i \in {I} \subset \mathbb{N}$ index the elements of $\Omega$.
+            Pick $\omega_i \in \Omega$ and suppose $\omega_i \in A_n$ infinitely often. That is,
+            there exists a subsequence $\{n_k\}$ for which that $\omega_i \in A_{n_k}$ for all $k$. For any index $K$, we have
+            $$P(\{\omega_i\}) \leq P\left(\bigcap_{k=1}^K A_{n_k}\right) = \prod_{k=1}^K P(A_{n_k}) =
+            \frac{1}{2^K}$$
+            Since $K$ can be made arbitrarily large, $P(\{\omega_i\}) = 0$.
+            Now if $\omega_i \in A_n$ only finitely often, then it must be the case that $\omega_i \in A_n^c$ infintely often.
+            Therefore by the same argument, $P(\{\omega_i\}) = 0$.
+            But then
+            $$P(\Omega) = P\left(\bigcup_{i \in {I}} \{\omega_i\}\right) = \sum_{i \in {I}} P(\{\omega_i\}) = 0$$
+            Since $P(\Omega) = 1$, this is a contradiction.
+        </p>
     </main>
 </body>
 
