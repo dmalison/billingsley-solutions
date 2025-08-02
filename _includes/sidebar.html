@@ -1,0 +1,38 @@
+<div class="sidebar">
+  <h3>Contents</h3>
+  <ul>
+    {% assign chapter_pages = site.pages | where_exp: "page", "page.path contains 'chapters/'" | sort: "path" %}
+    {% for page in chapter_pages %}
+      <li style="margin-left: {% if page.path contains '/section' %}20px{% else %}0{% endif %};">
+        <a href="{{ page.url | relative_url }}">{{ page.title | default: page.path }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<style>
+.sidebar {
+  position: fixed;
+  top: 5rem;              
+  left: 10rem;         
+  width: 15rem;       
+  padding: 0.625rem;    
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+  height: 100%;
+  overflow-y: auto;
+}
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.sidebar ul li a {
+  display: block;          
+  padding: 0.25rem 0;      
+}
+body {
+  margin-left: 1rem;
+  padding-top: 3.5rem; 
+}
+</style>

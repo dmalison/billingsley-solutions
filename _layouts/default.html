@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <style>
+    main {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 75vh;
+      line-height: 1.6;
+    }
+    .page-title {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5rem;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 1.5rem;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+
+    <header class="page-title">
+        <h1>{{ page.title }}</h1>
+    </header>
+
+    {% include sidebar.html %}
+
+    <main>
+        {{ content }}
+    </main>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+</body>
+
+</html>
